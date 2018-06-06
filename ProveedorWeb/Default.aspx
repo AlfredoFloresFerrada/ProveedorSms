@@ -10,7 +10,7 @@
     <SettingsPager PageSize="50" />
     <SettingsEditing Mode="PopupEditForm">
     </SettingsEditing>
-    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+    <Settings ShowFilterRow="True" ShowGroupPanel="True" ShowFilterRowMenu="True" />
     <SettingsBehavior ConfirmDelete="True" />
     <SettingsPopup>
         <EditForm VerticalAlign="WindowCenter" />
@@ -22,70 +22,28 @@
         <dx:GridViewDataTextColumn FieldName="Id" VisibleIndex="1" ReadOnly="True" Visible="False">
             <EditFormSettings Visible="False" />
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Rut" VisibleIndex="2">
-            <PropertiesTextEdit MaxLength="8">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Vendor" VisibleIndex="2">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Dv" VisibleIndex="3" Caption="Dig. Verif">
+        <dx:GridViewDataTextColumn FieldName="Nombre" VisibleIndex="3" Caption="Nombre del Proveedor">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Codigo" VisibleIndex="4" Caption="Código">
-            <PropertiesTextEdit MaxLength="50">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Contacto" VisibleIndex="4">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Nombre" VisibleIndex="5">
-            <PropertiesTextEdit MaxLength="50">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Fono" VisibleIndex="5">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Contacto" VisibleIndex="6">
-            <PropertiesTextEdit MaxLength="50">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Correo" VisibleIndex="6">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Fono" VisibleIndex="7">
-            <PropertiesTextEdit MaxLength="50">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Servicio" VisibleIndex="7" Caption="Tipo de Servicio o Suministro">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Email" VisibleIndex="8">
-            <PropertiesTextEdit MaxLength="50">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Categoria" VisibleIndex="8" Caption="Categoría o Descripción">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn Caption="Otro Proveedor" FieldName="OtroPv" VisibleIndex="11">
-            <PropertiesTextEdit MaxLength="50">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Lugar" VisibleIndex="9">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Comentario" VisibleIndex="13">
-            <PropertiesTextEdit MaxLength="150">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Cobertura" VisibleIndex="10">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn Caption="Web / URL" FieldName="Url" VisibleIndex="14">
-            <PropertiesTextEdit MaxLength="150">
-            </PropertiesTextEdit>
+        <dx:GridViewDataTextColumn FieldName="Contrato" VisibleIndex="11">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataComboBoxColumn Caption="Crítico" FieldName="Critico" VisibleIndex="12">
-            <PropertiesComboBox>
-                <Items>
-                    <dx:ListEditItem Selected="True" Text="No" Value="2" />
-                    <dx:ListEditItem Text="Cuello de Botella" Value="3" />
-                    <dx:ListEditItem Text="Estratégico" Value="4" />
-                    <dx:ListEditItem Text="Leverage" Value="5" />
-                </Items>
-            </PropertiesComboBox>
-        </dx:GridViewDataComboBoxColumn>
-        <dx:GridViewDataComboBoxColumn FieldName="Vigencia" VisibleIndex="9">
-            <PropertiesComboBox>
-                <Items>
-                    <dx:ListEditItem Selected="True" Text="Si" Value="1" />
-                    <dx:ListEditItem Text="No" Value="2" />
-                </Items>
-            </PropertiesComboBox>
-        </dx:GridViewDataComboBoxColumn>
-        <dx:GridViewDataComboBoxColumn Caption="Envío de correo" FieldName="EnvioMail" VisibleIndex="10">
-            <PropertiesComboBox>
-                <Items>
-                    <dx:ListEditItem Selected="True" Text="Si" Value="1" />
-                    <dx:ListEditItem Text="No" Value="2" />
-                </Items>
-            </PropertiesComboBox>
-        </dx:GridViewDataComboBoxColumn>
+        <dx:GridViewDataTextColumn Caption="Web / URL" FieldName="Url" VisibleIndex="12">
+        </dx:GridViewDataTextColumn>
     </Columns>
     <Paddings Padding="0px" />
     <Border BorderWidth="0px" />
@@ -96,38 +54,34 @@
 <%-- DXCOMMENT: Configure your datasource for ASPxGridView --%>
 
 
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Proveedor] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Proveedor] ([Rut], [Dv], [Codigo], [Nombre], [Contacto], [Fono], [Email], [Vigencia], [EnvioMail], [OtroPv], [Critico], [Comentario], [Url]) VALUES (@Rut, @Dv, @Codigo, @Nombre, @Contacto, @Fono, @Email, @Vigencia, @EnvioMail, @OtroPv, @Critico, @Comentario, @Url)" SelectCommand="SELECT [Id], [Rut], [Dv], [Codigo], [Nombre], [Contacto], [Fono], [Email], [Vigencia], [EnvioMail], [OtroPv], [Critico], [Comentario], [Url] FROM [Proveedor]" UpdateCommand="UPDATE [Proveedor] SET [Rut] = @Rut, [Dv] = @Dv, [Codigo] = @Codigo, [Nombre] = @Nombre, [Contacto] = @Contacto, [Fono] = @Fono, [Email] = @Email, [Vigencia] = @Vigencia, [EnvioMail] = @EnvioMail, [OtroPv] = @OtroPv, [Critico] = @Critico, [Comentario] = @Comentario, [Url] = @Url WHERE [Id] = @Id">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Proveedor] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Proveedor] ([Vendor], [Nombre], [Contacto], [Fono], [Correo], [Servicio], [Categoria], [Lugar], [Cobertura], [Contrato], [Url]) VALUES (@Vendor, @Nombre, @Contacto, @Fono, @Correo, @Servicio, @Categoria, @Lugar, @Cobertura, @Contrato, @Url)" SelectCommand="SELECT [Id], [Vendor], [Nombre], [Contacto], [Fono], [Correo], [Servicio], [Categoria], [Lugar], [Cobertura], [Contrato], [Url] FROM [Proveedor]" UpdateCommand="UPDATE [Proveedor] SET [Vendor] = @Vendor, [Nombre] = @Nombre, [Contacto] = @Contacto, [Fono] = @Fono, [Correo] = @Correo, [Servicio] = @Servicio, [Categoria] = @Categoria, [Lugar] = @Lugar, [Cobertura] = @Cobertura, [Contrato] = @Contrato, [Url] = @Url WHERE [Id] = @Id">
         <DeleteParameters>
             <asp:Parameter Name="Id" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="Rut" Type="Int32" />
-            <asp:Parameter Name="Dv" Type="String" />
-            <asp:Parameter Name="Codigo" Type="String" />
+            <asp:Parameter Name="Vendor" Type="Int32" />
             <asp:Parameter Name="Nombre" Type="String" />
             <asp:Parameter Name="Contacto" Type="String" />
             <asp:Parameter Name="Fono" Type="String" />
-            <asp:Parameter Name="Email" Type="String" />
-            <asp:Parameter Name="Vigencia" Type="Int32" />
-            <asp:Parameter Name="EnvioMail" Type="Int32" />
-            <asp:Parameter Name="OtroPv" Type="String" />
-            <asp:Parameter Name="Critico" Type="Int32" />
-            <asp:Parameter Name="Comentario" Type="String" />
+            <asp:Parameter Name="Correo" Type="String" />
+            <asp:Parameter Name="Servicio" Type="String" />
+            <asp:Parameter Name="Categoria" Type="String" />
+            <asp:Parameter Name="Lugar" Type="String" />
+            <asp:Parameter Name="Cobertura" Type="String" />
+            <asp:Parameter Name="Contrato" Type="String" />
             <asp:Parameter Name="Url" Type="String" />
         </InsertParameters>
         <UpdateParameters>
-            <asp:Parameter Name="Rut" Type="Int32" />
-            <asp:Parameter Name="Dv" Type="String" />
-            <asp:Parameter Name="Codigo" Type="String" />
+            <asp:Parameter Name="Vendor" Type="Int32" />
             <asp:Parameter Name="Nombre" Type="String" />
             <asp:Parameter Name="Contacto" Type="String" />
             <asp:Parameter Name="Fono" Type="String" />
-            <asp:Parameter Name="Email" Type="String" />
-            <asp:Parameter Name="Vigencia" Type="Int32" />
-            <asp:Parameter Name="EnvioMail" Type="Int32" />
-            <asp:Parameter Name="OtroPv" Type="String" />
-            <asp:Parameter Name="Critico" Type="Int32" />
-            <asp:Parameter Name="Comentario" Type="String" />
+            <asp:Parameter Name="Correo" Type="String" />
+            <asp:Parameter Name="Servicio" Type="String" />
+            <asp:Parameter Name="Categoria" Type="String" />
+            <asp:Parameter Name="Lugar" Type="String" />
+            <asp:Parameter Name="Cobertura" Type="String" />
+            <asp:Parameter Name="Contrato" Type="String" />
             <asp:Parameter Name="Url" Type="String" />
             <asp:Parameter Name="Id" Type="Int32" />
         </UpdateParameters>

@@ -42,4 +42,3 @@ C:\ProveedorSms\ProveedorWeb\bin\ru\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\ProveedorSms\ProveedorWeb\obj\Release\ProveedorWeb.dll.licenses
 C:\ProveedorSms\ProveedorWeb\obj\Release\ProveedorWeb.dll
 C:\ProveedorSms\ProveedorWeb\obj\Release\ProveedorWeb.pdb
-C:\ProveedorSms\ProveedorWeb\obj\Release\ProveedorWeb.csprojResolveAssemblyReference.cache

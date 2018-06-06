@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <items>
   <item Text="Proveedores" NavigateUrl="~/Default.aspx" />
-  <item Text="Mantenedor relacional" NavigateUrl="#"  />
-  <item Text="Categoría y Servicios" NavigateUrl="~/CategoriaServicio.aspx"  />
+  <!--<item Text="Mantenedor relacional" NavigateUrl="#"  />-->
+  <!--<item Text="Categoría y Servicios" NavigateUrl="~/CategoriaServicio.aspx"  />-->
   <!--<item Text="Support" NavigateUrl="#"  />-->
 </items>
