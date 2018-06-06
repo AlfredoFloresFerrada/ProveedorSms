@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="ProveedorWeb.Global_asax" Language="C#" %>
